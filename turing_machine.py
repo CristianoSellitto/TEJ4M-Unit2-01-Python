@@ -96,10 +96,10 @@ class TuringMachine(object):
 #                                            ↓ direction to move
 state_machine = {("init" ,"0"):("init", "0","R"),
                  ("init" ,"1"):("init", "1","R"),
-                 ("init" ," "):("init2"," ","L"),
-                 ("init2","0"):("init", "1","R"),
-                 ("init2","1"):("init2","0","L"),
-                 ("init2"," "):("final","1","N"),
+                 ("init" ," "):("init1"," ","L"),
+                 ("init1","0"):("init", "1","R"),
+                 ("init1","1"):("init1","0","L"),
+                 ("init1"," "):("final","1","N"),
                 }
 
 # initial tape
