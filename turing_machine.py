@@ -94,14 +94,17 @@ class TuringMachine(object):
 #                                 ↓ state you become
 #                                       ↓ value to write to Tape
 #                                            ↓ direction to move
-state_machine = {("init","0"):("init", "1", "R"),
-                 ("init","1"):("init", "0", "R"),
-                 ("init"," "):("final"," ", "N"),
+state_machine = {("init" ,"0"):("init", "0","R"),
+                 ("init" ,"1"):("init", "1","R"),
+                 ("init" ," "):("init2"," ","L"),
+                 ("init2","0"):("init", "1","R"),
+                 ("init2","1"):("init2","0","L"),
+                 ("init2"," "):("final","1","N"),
                 }
 
 # initial tape
 #                  ↓ initial tape values
-t = TuringMachine("010011001 ", 
+t = TuringMachine("1011 ", 
                   initial_state = "init",
                   final_states = {"final"},
                   transition_function = state_machine)
